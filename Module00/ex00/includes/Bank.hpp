@@ -6,7 +6,7 @@
 /*   By: mbatty <mbatty@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 22:15:31 by mbatty            #+#    #+#             */
-/*   Updated: 2025/10/07 22:27:01 by mbatty           ###   ########.fr       */
+/*   Updated: 2025/10/07 23:21:24 by mbatty           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ struct Bank
 				uint	_id;
 				int		_value;
 
-			friend Bank;
+			friend struct Bank;
 		};
 	private:
 		uint						_currentID;
@@ -48,6 +48,7 @@ struct Bank
 		void	createNewAccount();
 		void	deleteAccount(uint id);
 		Account	*getClient(uint id);
+		Account	*getClient(uint id) const;
 		Account	*operator[](uint id);
 
 		void	addMoneyToAccount(uint id, int value);
@@ -55,6 +56,7 @@ struct Bank
 
 		void	setLiquidity(int value) {_liquidity = value;}
 		int		getLiquidity() const {return (_liquidity);}
+		int		getLiquidity() {return (_liquidity);}
 };
 
 #endif

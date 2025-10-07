@@ -1,7 +1,7 @@
 NAME = ex00
 
 CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -g
+CXXFLAGS = -Wall -Wextra -Werror --std=c++98 -g
 
 GLFWARCHIVE = external/GLFW/build/src/libglfw3.a
 GLFW_CFLAGS  = $(shell pkg-config --cflags glfw3)

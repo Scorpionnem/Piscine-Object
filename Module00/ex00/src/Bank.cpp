@@ -6,7 +6,7 @@
 /*   By: mbatty <mbatty@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 22:17:54 by mbatty            #+#    #+#             */
-/*   Updated: 2025/10/07 22:20:49 by mbatty           ###   ########.fr       */
+/*   Updated: 2025/10/07 23:19:58 by mbatty           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,14 @@ Bank::Account	*Bank::getClient(uint id)
 		throw std::runtime_error("Account not found!");
 
 	return (_clientAccounts[id]);
+}
+
+Bank::Account	*Bank::getClient(uint id) const
+{
+	if (_clientAccounts.find(id) == _clientAccounts.end())
+		throw std::runtime_error("Account not found!");
+
+	return (_clientAccounts.find(id)->second);
 }
 
 Bank::Account	*Bank::operator[](uint id)
