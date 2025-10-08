@@ -6,7 +6,7 @@
 /*   By: mbatty <mbatty@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 21:20:29 by mbatty            #+#    #+#             */
-/*   Updated: 2025/10/08 10:43:19 by mbatty           ###   ########.fr       */
+/*   Updated: 2025/10/08 10:50:29 by mbatty           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int main()
 
 		std::cout << "Liquidity: " << laBanquePostale.getLiquidity() << std::endl;
 
-		std::cout << "Client 0 has " << laBanquePostale.getClient(0).getValue() << " they're super rich! They can almost buy a 42 hoodie!" << std::endl;
+		std::cout << "Client 0 has " << laBanquePostale.getAccount(0).getValue() << " they're super rich! They can almost buy a 42 hoodie!" << std::endl;
 	} catch (const std::runtime_error &e) {
 		std::cerr << "An error occured " << e.what() << std::endl;
 	}

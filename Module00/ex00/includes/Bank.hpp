@@ -6,7 +6,7 @@
 /*   By: mbatty <mbatty@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 22:15:31 by mbatty            #+#    #+#             */
-/*   Updated: 2025/10/08 10:47:31 by mbatty           ###   ########.fr       */
+/*   Updated: 2025/10/08 10:50:19 by mbatty           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ struct Bank
 		int							_liquidity;
 		std::map<long, Account>		_clientAccounts;
 
-		Account	&_getClient(long accountId)
+		Account	&_getAccount(long accountId)
 		{
 			if (_clientAccounts.find(accountId) == _clientAccounts.end())
 				throw std::runtime_error("Account not found!");
@@ -66,7 +66,7 @@ struct Bank
 
 			_clientAccounts.erase(_clientAccounts.find(accountId));
 		}
-		const Account	&getClient(long accountId) const
+		const Account	&getAccount(long accountId) const
 		{
 			if (_clientAccounts.find(accountId) == _clientAccounts.end())
 				throw std::runtime_error("Account not found!");
@@ -75,7 +75,7 @@ struct Bank
 		}
 		const Account	&operator[](long accountId)
 		{
-			return (getClient(accountId));
+			return (getAccount(accountId));
 		}
 
 		void	addMoney(long accountId, int value)
@@ -85,13 +85,13 @@ struct Bank
 			_liquidity += tax;
 			value -= tax;
 
-			_getClient(accountId)._value += value;
+			_getAccount(accountId)._value += value;
 
 			std::cout << "Bank: Added " << value << " wallets to account " << accountId << std::endl;	
 		}
 		void	takeLoan(long accountId, int val)
 		{
-			Account	&pooron = _getClient(accountId);
+			Account	&pooron = _getAccount(accountId);
 
 			if (val > _liquidity)
 				throw std::runtime_error("Loan greater than liquidity");
