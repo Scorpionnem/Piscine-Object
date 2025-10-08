@@ -6,7 +6,7 @@
 /*   By: mbatty <mbatty@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/08 13:06:03 by mbatty            #+#    #+#             */
-/*   Updated: 2025/10/08 15:15:26 by mbatty           ###   ########.fr       */
+/*   Updated: 2025/10/08 15:22:04 by mbatty           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@ class	Hammer : public Tool
 	public:
 		Hammer() : _numberOfUses(0)
 		{
-			std::cout << CYAN"Hammer: Created a new hammer!" << std::endl;
+			std::cout << CYAN"Hammer: Created a new hammer!"RESET << std::endl;
 		}
 		~Hammer()
 		{
-			std::cout << CYAN"Hammer: Destroyed hammer" << std::endl;
+			std::cout << CYAN"Hammer: Destroyed hammer"RESET << std::endl;
 		}
 		void	use()
 		{

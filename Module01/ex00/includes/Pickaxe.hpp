@@ -6,7 +6,7 @@
 /*   By: mbatty <mbatty@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/08 15:14:21 by mbatty            #+#    #+#             */
-/*   Updated: 2025/10/08 15:15:48 by mbatty           ###   ########.fr       */
+/*   Updated: 2025/10/08 15:22:08 by mbatty           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@ class	Pickaxe : public Tool
 	public:
 		Pickaxe() : _numberOfUses(0)
 		{
-			std::cout << CYAN"Pickaxe: Created a new pickaxe!" << std::endl;
+			std::cout << CYAN"Pickaxe: Created a new pickaxe!"RESET << std::endl;
 		}
 		~Pickaxe()
 		{
-			std::cout << CYAN"Pickaxe: Destroyed pickaxe" << std::endl;
+			std::cout << CYAN"Pickaxe: Destroyed pickaxe"RESET << std::endl;
 		}
 		void	use()
 		{

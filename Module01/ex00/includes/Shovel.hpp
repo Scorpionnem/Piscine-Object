@@ -6,7 +6,7 @@
 /*   By: mbatty <mbatty@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/08 13:03:43 by mbatty            #+#    #+#             */
-/*   Updated: 2025/10/08 15:16:11 by mbatty           ###   ########.fr       */
+/*   Updated: 2025/10/08 15:22:11 by mbatty           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@ class	Shovel : public Tool
 	public:
 		Shovel() : _numberOfUses(0)
 		{
-			std::cout << CYAN"Shovel: Created a new shovel!" << std::endl;
+			std::cout << CYAN"Shovel: Created a new shovel!"RESET << std::endl;
 		}
 		~Shovel()
 		{
-			std::cout << CYAN"Shovel: Destroyed shovel" << std::endl;
+			std::cout << CYAN"Shovel: Destroyed shovel"RESET << std::endl;
 		}
 		void	use()
 		{
