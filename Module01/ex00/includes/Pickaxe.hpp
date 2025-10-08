@@ -1,37 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Shovel.hpp                                         :+:      :+:    :+:   */
+/*   Pickaxe.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbatty <mbatty@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/08 13:03:43 by mbatty            #+#    #+#             */
-/*   Updated: 2025/10/08 15:16:11 by mbatty           ###   ########.fr       */
+/*   Created: 2025/10/08 15:14:21 by mbatty            #+#    #+#             */
+/*   Updated: 2025/10/08 15:15:48 by mbatty           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SHOVEL_HPP
-# define SHOVEL_HPP
+#ifndef PICKAXE_HPP
+# define PICKAXE_HPP
 
 # include "libs.hpp"
 
 # include "Tool.hpp"
 
-class	Shovel : public Tool
+class	Pickaxe : public Tool
 {
 	public:
-		Shovel() : _numberOfUses(0)
+		Pickaxe() : _numberOfUses(0)
 		{
-			std::cout << CYAN"Shovel: Created a new shovel!" << std::endl;
+			std::cout << CYAN"Pickaxe: Created a new pickaxe!" << std::endl;
 		}
-		~Shovel()
+		~Pickaxe()
 		{
-			std::cout << CYAN"Shovel: Destroyed shovel" << std::endl;
+			std::cout << CYAN"Pickaxe: Destroyed pickaxe" << std::endl;
 		}
 		void	use()
 		{
 			_numberOfUses++;
-			std::cout << CYAN"Shovel: Shovel has been used"RESET << std::endl;
+			std::cout << CYAN"Pickaxe: Pickaxe has been used"RESET << std::endl;
 		}
 		uint	getNumberOfUses() {return (_numberOfUses);}
 	private:

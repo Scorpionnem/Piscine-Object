@@ -6,7 +6,7 @@
 /*   By: mbatty <mbatty@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/08 13:11:46 by mbatty            #+#    #+#             */
-/*   Updated: 2025/10/08 14:06:18 by mbatty           ###   ########.fr       */
+/*   Updated: 2025/10/08 15:17:48 by mbatty           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,24 @@ int	main(void)
 	
 	Workshop<Shovel>	temuFactory;
 	Workshop<Hammer>	wishFactory;
+	Workshop<Pickaxe>	netherFactory;
 
 	std::cout << ITALIC"Breeding workers"RESET << std::endl;
 
 	Worker	bob;
 	Worker	theo;
+
 	Worker	leo;
 	Worker	etienne;
+
+	Worker	basile;
+	Worker	manutea;
 	
+	std::cout << ITALIC"Creating tools"RESET << std::endl;
+
 	Shovel	ironShovel;
 	Hammer	diamondSledgeHammer;
+	Pickaxe	netheritePickaxe;
 
 	std::cout << ITALIC"Equipping tools"RESET << std::endl;
 
@@ -36,6 +44,9 @@ int	main(void)
 	
 	leo.addTool(&diamondSledgeHammer);
 	etienne.addTool(&diamondSledgeHammer);
+	
+	basile.addTool(&netheritePickaxe);
+	manutea.addTool(&netheritePickaxe);
 
 	std::cout << ITALIC"Registering workers"RESET << std::endl;
 	
@@ -45,6 +56,9 @@ int	main(void)
 	wishFactory.registerWorker(&leo);
 	wishFactory.registerWorker(&etienne);
 
+	netherFactory.registerWorker(&basile);
+	netherFactory.registerWorker(&manutea);
+
 	std::cout << ITALIC"Testing dropping a tool so no more job!"RESET << std::endl;
 
 	leo.dropTool(&diamondSledgeHammer);
@@ -53,6 +67,7 @@ int	main(void)
 
 	temuFactory.executeWorkDay();
 	wishFactory.executeWorkDay();
+	netherFactory.executeWorkDay();
 	
 	std::cout << ITALIC"Destructors"RESET << std::endl;
 }

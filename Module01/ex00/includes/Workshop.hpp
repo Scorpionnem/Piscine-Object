@@ -6,7 +6,7 @@
 /*   By: mbatty <mbatty@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/08 13:19:03 by mbatty            #+#    #+#             */
-/*   Updated: 2025/10/08 14:03:21 by mbatty           ###   ########.fr       */
+/*   Updated: 2025/10/08 15:14:50 by mbatty           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include "Worker.hpp"
 # include "Shovel.hpp"
 # include "Hammer.hpp"
+# include "Pickaxe.hpp"
 
 # include "WorkshopBase.hpp"
 

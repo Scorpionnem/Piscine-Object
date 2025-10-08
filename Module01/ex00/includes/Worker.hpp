@@ -6,7 +6,7 @@
 /*   By: mbatty <mbatty@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/08 12:56:21 by mbatty            #+#    #+#             */
-/*   Updated: 2025/10/08 14:02:41 by mbatty           ###   ########.fr       */
+/*   Updated: 2025/10/08 15:14:43 by mbatty           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include "Statistic.hpp"
 # include "Shovel.hpp"
 # include "Hammer.hpp"
+# include "Pickaxe.hpp"
 
 # define nullptr NULL
 
@@ -79,7 +80,7 @@ class	Worker
 		}
 	private:
 		Position				_coordinate;
-		Position				_stat;
+		Statistic				_stat;
 		std::vector<Tool*>		_tools;
 		std::vector<WorkshopBase*>	_workshops;
 };
