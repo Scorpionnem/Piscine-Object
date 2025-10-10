@@ -1,0 +1,137 @@
+@startuml
+
+abstract class LinkablePart {
+    + {abstract} void execute(float p_pression)
+}
+
+class Wheel {
+    + void executeRotation(float p_force)
+}
+
+class Gear {
+    + int demultiplier
+}
+
+class Singleton<T> {
+    # Singleton()
+    + static T& instance()
+}
+
+class GearLever {
+    + void change()
+    + Gear* activeGear()
+    - Gear gears[*]
+    - int level
+}
+Singleton <|-- GearLever
+
+class Transmission {
+    - Wheel* wheels[*]
+    + void activate(float p_force)
+}
+
+class Crankshaft {
+    - Transmission* transmission
+    + void receiveForce(float p_volume)
+}
+
+class ExplosionChamber {
+    - Crankshaft* crankshaft
+    + void fill(float p_volume)
+}
+
+class Injector {
+    - ExplosionChamber* explosionChamber
+    + void execute(float p_pression)
+}
+LinkablePart <|-- Injector
+
+class Motor {
+    - Injector injector
+    - ExplosionChamber explosionChamber
+    - Crankshaft crankshaft
+    + void connectToTransmission(Transmission* p_transmission)
+}
+
+class Pedal {
+    - LinkablePart* part
+    + void setTarget(LinkablePart* p_part)
+    + void use(float p_pression)
+}
+
+class Direction {
+    - Wheel wheels[*]
+    + void turn(float p_angle)
+}
+
+class DAE {
+    - Direction* direction
+    - float force
+    + void use(float p_angle)
+}
+
+class SteerWheel {
+    - DAE* dae
+    + void turn(float p_angle)
+}
+
+class Brake {
+    - Wheel* wheel
+    + void execute(float p_force)
+    + void attackWheel(Wheel* p_wheel)
+}
+
+class BrakeController {
+    - Brake brakes[*]
+    + void execute(float p_pression)
+}
+LinkablePart <|-- BrakeController
+
+class Cockpit {
+    - Pedal pedal
+    - SteerWheel steerWheel
+    - GearLever gearLever
+    + GearLever& getGearLever()
+    + SteerWheel& getSteerWheel()
+    + Pedal& getPedal()
+}
+
+class Electronics {
+    - DAE dae
+}
+
+class Car {
+    - BrakeController brakeController
+    - Direction direction
+    - Transmission transmission
+    - Motor motor
+    - Electronics electronics
+    - Cockpit cockpit
+}
+
+Car *-- Cockpit
+Car *-- Motor
+Car *-- Electronics
+Car *-- Direction
+Car *-- Transmission
+Car *-- BrakeController
+
+GearLever *-- Gear
+Electronics *-- DAE
+Cockpit *-- Pedal
+Cockpit *-- GearLever
+Cockpit *-- SteerWheel
+Motor *-- Injector
+Motor *-- ExplosionChamber
+Motor *-- Crankshaft
+Crankshaft o-- Transmission
+DAE o-- Direction
+SteerWheel o-- DAE
+Pedal o-- LinkablePart
+Injector o-- ExplosionChamber
+ExplosionChamber o-- Crankshaft
+Transmission *-- Wheel
+Direction *-- Wheel
+BrakeController *-- Brake
+
+@enduml
