@@ -130,7 +130,8 @@ SteerWheel o-- DAE
 Pedal o-- LinkablePart
 Injector o-- ExplosionChamber
 ExplosionChamber o-- Crankshaft
-Transmission *-- Wheel
+Transmission o-- Wheel
+Brake o-- Wheel
 Direction *-- Wheel
 BrakeController *-- Brake
 
