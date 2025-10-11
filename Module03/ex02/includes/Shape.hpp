@@ -1,31 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Wheel.hpp                                          :+:      :+:    :+:   */
+/*   Shape.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbatty <mbatty@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/10 18:17:15 by mbatty            #+#    #+#             */
-/*   Updated: 2025/10/11 10:56:23 by mbatty           ###   ########.fr       */
+/*   Created: 2025/10/11 11:55:34 by mbatty            #+#    #+#             */
+/*   Updated: 2025/10/11 12:16:18 by mbatty           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WHEEL_HPP
-# define WHEEL_HPP
+#ifndef SHAPE_HPP
+# define SHAPE_HPP
 
-# include <iostream>
-
-class	Wheel
+class	Shape
 {
 	public:
-		void	turn_wheel(int angle)
-		{
-			std::cout << "Turning wheels with angle of " << angle << std::endl;
-		}
-		void	straighten_wheels()
-		{
-			std::cout << "Straightening wheels" << std::endl;
-		}
+		Shape(){}
+		virtual ~Shape(){}
+	
+		virtual float area() = 0;
 };
 
 #endif

@@ -1,31 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Wheel.hpp                                          :+:      :+:    :+:   */
+/*   Rectangle.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbatty <mbatty@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/10 18:17:15 by mbatty            #+#    #+#             */
-/*   Updated: 2025/10/11 10:56:23 by mbatty           ###   ########.fr       */
+/*   Created: 2025/10/11 11:56:28 by mbatty            #+#    #+#             */
+/*   Updated: 2025/10/11 11:58:13 by mbatty           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WHEEL_HPP
-# define WHEEL_HPP
+#ifndef RECTANGLE_HPP
+# define RECTANGLE_HPP
 
-# include <iostream>
+# include "Shape.hpp"
 
-class	Wheel
+class	Rectangle : public Shape
 {
 	public:
-		void	turn_wheel(int angle)
+		Rectangle(float width, float height)
 		{
-			std::cout << "Turning wheels with angle of " << angle << std::endl;
+			_width = width;
+			_height = height;	
 		}
-		void	straighten_wheels()
+		float area()
 		{
-			std::cout << "Straightening wheels" << std::endl;
+			return (_width * _height);
 		}
+	private:
+		float	_width;
+		float	_height;
 };
 
 #endif

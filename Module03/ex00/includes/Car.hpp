@@ -6,7 +6,7 @@
 /*   By: mbatty <mbatty@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/10 18:10:23 by mbatty            #+#    #+#             */
-/*   Updated: 2025/10/10 18:34:11 by mbatty           ###   ########.fr       */
+/*   Updated: 2025/10/11 10:58:00 by mbatty           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,6 @@
 class	Car
 {
 	public:
-		Car() {}
-		~Car() {}
-
 		void	start()
 		{
 			_engine.start();
@@ -35,7 +32,7 @@ class	Car
 		
 		void	accelerate(int speed)
 		{
-			_speed += speed * _gearbox.getGear() - _brakes.getBreakingForce();
+			_engine.accelerate(speed);
 		}
 
 		void	shift_gears_up()
@@ -73,7 +70,6 @@ class	Car
 		Gearbox	_gearbox;
 		Wheel	_wheel;
 		Brakes	_brakes;
-		int		_speed;
 };
 
 #endif

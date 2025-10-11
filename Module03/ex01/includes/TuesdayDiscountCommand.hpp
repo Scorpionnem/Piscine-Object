@@ -1,30 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Wheel.hpp                                          :+:      :+:    :+:   */
+/*   TuesdayDiscountCommand.hpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbatty <mbatty@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/10 18:17:15 by mbatty            #+#    #+#             */
-/*   Updated: 2025/10/11 10:56:23 by mbatty           ###   ########.fr       */
+/*   Created: 2025/10/11 11:42:25 by mbatty            #+#    #+#             */
+/*   Updated: 2025/10/11 11:53:15 by mbatty           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WHEEL_HPP
-# define WHEEL_HPP
+#ifndef TUESDAYDISCOUNTCOMMAND_HPP
+# define TUESDAYDISCOUNTCOMMAND_HPP
 
-# include <iostream>
+# include "Command.hpp"
 
-class	Wheel
+class TuesdayDiscountCommand : public Command
 {
 	public:
-		void	turn_wheel(int angle)
+		TuesdayDiscountCommand(int id, const std::string &client, const std::map<std::string, int> &articles)
+		: Command(id, client, articles)
+		{}
+		int get_total_price()
 		{
-			std::cout << "Turning wheels with angle of " << angle << std::endl;
-		}
-		void	straighten_wheels()
-		{
-			std::cout << "Straightening wheels" << std::endl;
+			if (_date->tm_wday == 2)
+				return (Command::get_total_price() * 0.9);
+			return (Command::get_total_price());
 		}
 };
 

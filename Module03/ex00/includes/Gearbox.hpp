@@ -6,7 +6,7 @@
 /*   By: mbatty <mbatty@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/10 18:16:19 by mbatty            #+#    #+#             */
-/*   Updated: 2025/10/10 18:33:04 by mbatty           ###   ########.fr       */
+/*   Updated: 2025/10/11 10:55:55 by mbatty           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,33 +18,18 @@
 class	Gearbox
 {
 	public:
-		Gearbox(): _gear(0) {}
-		~Gearbox() {}
-		
 		void	shift_gears_up()
 		{
-			_gear++;
-			print();
+			std::cout << "Shitfing gears up" << std::endl;
 		}
 		void	shift_gears_down()
 		{
-			_gear--;
-			print();
+			std::cout << "Shitfing gears down" << std::endl;
 		}
 		void	reverse()
 		{
-			_gear = -1;
-			print();
+			std::cout << "Reversing gears" << std::endl;
 		}
-
-		void	print()
-		{
-			std::cout << "Gear is at " << _gear << std::endl;
-		}
-
-		int	getGear() {return (_gear);}
-	private:
-		int	_gear;
 };
 
 #endif

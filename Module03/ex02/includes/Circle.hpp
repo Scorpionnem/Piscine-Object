@@ -1,31 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Wheel.hpp                                          :+:      :+:    :+:   */
+/*   Circle.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbatty <mbatty@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/10 18:17:15 by mbatty            #+#    #+#             */
-/*   Updated: 2025/10/11 10:56:23 by mbatty           ###   ########.fr       */
+/*   Created: 2025/10/11 12:10:41 by mbatty            #+#    #+#             */
+/*   Updated: 2025/10/11 12:12:33 by mbatty           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WHEEL_HPP
-# define WHEEL_HPP
+#ifndef CIRCLE_HPP
+# define CIRCLE_HPP
 
-# include <iostream>
+# include "Shape.hpp"
+# include <cmath>
 
-class	Wheel
+class Circle : public Shape
 {
 	public:
-		void	turn_wheel(int angle)
+		Circle(float radius)
 		{
-			std::cout << "Turning wheels with angle of " << angle << std::endl;
+			_radius = radius;
 		}
-		void	straighten_wheels()
+
+		float area()
 		{
-			std::cout << "Straightening wheels" << std::endl;
+			return (M_PI * pow(_radius, 2));
 		}
+	private:
+		float _radius;
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: mbatty <mbatty@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/10 18:16:05 by mbatty            #+#    #+#             */
-/*   Updated: 2025/10/10 18:33:11 by mbatty           ###   ########.fr       */
+/*   Updated: 2025/10/11 10:55:16 by mbatty           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,22 +18,18 @@
 class	Engine
 {
 	public:
-		Engine(): _started(false) {}
-		~Engine() {}
 		void	start()
 		{
 			std::cout << "Starting engine" << std::endl;
-			_started = true;
 		}
 		void	stop()
 		{
 			std::cout << "Stopping engine" << std::endl;
-			_started = false;
 		}
-
-		bool	getState() {return (_started);}
-	private:
-		bool	_started;
+		void	accelerate(int speed)
+		{
+			std::cout << "Accelerating engine with speed " << speed << std::endl;	
+		}
 };
 
 #endif
