@@ -6,7 +6,7 @@
 /*   By: mbatty <mbatty@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/11 11:56:28 by mbatty            #+#    #+#             */
-/*   Updated: 2025/10/11 11:58:13 by mbatty           ###   ########.fr       */
+/*   Updated: 2026/02/11 15:07:29 by mbatty           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,13 @@ class	Rectangle : public Shape
 			_width = width;
 			_height = height;	
 		}
-		float area()
+		float getArea()
 		{
 			return (_width * _height);
+		}
+		float	getPerimeter()
+		{
+			return (_width + _width + _height + _height);
 		}
 	private:
 		float	_width;

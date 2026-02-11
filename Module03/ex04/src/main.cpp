@@ -6,7 +6,7 @@
 /*   By: mbatty <mbatty@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/11 13:12:22 by mbatty            #+#    #+#             */
-/*   Updated: 2026/02/11 13:24:28 by mbatty           ###   ########.fr       */
+/*   Updated: 2026/02/11 15:27:44 by mbatty           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,20 +17,30 @@
 
 int	main(void)
 {
-	FileLogger	log("file.txt");
-	StreamLogger	log2(std::cout);
+	FileLogger		file_log_header_timeheader("file1.txt");
+	FileLogger		file_log_header("file2.txt");
+	FileLogger		file_log_timeheader("file3.txt");
+	
+	StreamLogger	stream_log_header_timeheader(std::cout);
+	StreamLogger	stream_log_header(std::cout);
+	StreamLogger	stream_log_timeheader(std::cout);
 
-	log.setHeader(" File: ");
-	log.setTimeHeader(true);
+	file_log_header_timeheader.setHeader(" [HEADER] ");
+	file_log_header_timeheader.setTimeHeader(true);
 
-	log2.setHeader("cout lol: ");
-	log2.setTimeHeader(false);
+	file_log_header.setHeader("[HEADER] ");
 
-	log.write("Hello file\n");
-	log2.write("Hello stdcout\n");
+	file_log_header_timeheader.setTimeHeader(true);
 
-	std::vector<ILogger*>	loggers = {&log, &log2};
+	stream_log_header_timeheader.setHeader(" [HEADER] ");
+	stream_log_header_timeheader.setTimeHeader(true);
+
+	stream_log_header.setHeader("[HEADER] ");
+
+	stream_log_header_timeheader.setTimeHeader(true);
+
+	std::vector<ILogger*>	loggers = {&file_log_header_timeheader, &file_log_header, &file_log_timeheader, &stream_log_header_timeheader, &stream_log_header, &stream_log_timeheader};
 
 	for (auto l : loggers)
-		l->write("asdkljadklsajdklasjfdheavsjkldf\n");
+		l->write("writing\n");
 }

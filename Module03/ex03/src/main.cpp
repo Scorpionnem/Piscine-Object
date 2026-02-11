@@ -6,7 +6,7 @@
 /*   By: mbatty <mbatty@student.42angouleme.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/11 12:26:01 by mbatty            #+#    #+#             */
-/*   Updated: 2026/02/11 13:07:53 by mbatty           ###   ########.fr       */
+/*   Updated: 2026/02/11 15:24:30 by mbatty           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,13 @@ int	main(void)
 	TempWorker			basile("Basile", 67);
 	Apprentice			manutea("Manutea", 4);
 
+	TempWorker			etienne("Etienne", 67);
+
 	voxelRPG.addEmployee(&denis);
 	voxelRPG.addEmployee(&basile);
 	voxelRPG.addEmployee(&manutea);
+
+	voxelRPG.addEmployee(&etienne);
 
 	denis.registerNotWorkedHours(67000);
 
